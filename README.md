@@ -1,7 +1,7 @@
-# UNIGAP - PORTFOLIO BUILDING MODULE - SQL/ PYTHON PROJECT
+# eCommerce - Website analysis - SQL
 
-🔥Use this template as an outline for your SQL/ Python Github projects - which is task by task type of projects. 
-Make a copy of this readme file and tailor it your own. Happy portfolio-ing and start applying aggressively :"))
+Please click on the link below to see the code:
+https://console.cloud.google.com/bigquery?sq=690384817981:f2ba7cdb31be4548849a4ad57d91170f
 
 ---
 ![KPMG Transaction Analysis](https://github.com/Dorothy-Ho-Vy/Sample_SQL_Python_template/blob/4dee6ff56077b90b1aea82e8517136f7185a77a3/Blue%20White%20Modern%20Payment%20Gateway%20Service%20Twitter%20Post.png.crdownload)
