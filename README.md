@@ -52,10 +52,10 @@ Tools Used: SQL
 
 | Column Name | Data Type | Description |  
 |-------------|-----------|-------------|  
-| Product_ID  | INT      | Unique identifier for each product |  
-| Name        | TEXT     | Product name |  
-| Category    | TEXT     | Product category |  
-| Price       | FLOAT    | Price per unit |  
+| fullVisitorId  | INT       | Unique identifier for each product |  
+| date        | TEXT      | Product name |  
+| totals | TEXT      | Product category |  
+| totals.bounces | FLOAT     | Price per unit |  
 
 | Field Name  |Data Type|Description|
 | :—––––––––: | :———– | :————– |
