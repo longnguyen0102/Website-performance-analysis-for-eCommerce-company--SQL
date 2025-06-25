@@ -1,4 +1,4 @@
-# eCommerce - Website analysis - SQL
+# Website analysis - eCommerce - SQL
 
 Please click on the link below to see the code:
 https://console.cloud.google.com/bigquery?sq=690384817981:f2ba7cdb31be4548849a4ad57d91170f
@@ -8,10 +8,10 @@ https://console.cloud.google.com/bigquery?sq=690384817981:f2ba7cdb31be4548849a4a
 
 👉🏻Change Icon emoji 🔥🔍📘🚩 to your likings by clicking "Start" + "."
 
-# 📊 Project Title: [Your Project Name]  
-Author: [Your Name]  
-Date: YYYY-MM-DD  
-Tools Used: SQL/ Python  
+# 📊 Website analysis - eCommerce - SQL
+Author: Nguyễn Hải Long 
+Date: 2025-02  
+Tools Used: SQL 
 
 ---
 
@@ -25,19 +25,10 @@ Tools Used: SQL/ Python
 ## 📌 Background & Overview  
 
 ### Objective:
-### 📖 What is this project about? What Business Question will it solve?
+### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.
 
-Clearly outline what this project does, what business questions the project will solve. 
-
-- Provide a brief introduction - Write in bullet point format
-- Point out the main business question
-
-
- _Example:_
-  This project uses Python to analyze transaction data from KPMG to:
-
-✔️ Identify the behavior in customer's first transaction.  
-✔️ Provide actionable insights to increase retention rate   
+- Show up data as demand: number of pageview, visits; calculate the average of money spending by customers in a period of time...
+- 
  
 
 
