@@ -84,7 +84,7 @@ GROUP BY date
 ;
 ```
 Result  
-![result_query_1](https://github.com/longnguyen0102/eCommerce_project/sql_ecommerce_query01_result.png)
+![result_query_1]([https://github.com/longnguyen0102/eCommerce_project/sql_ecommerce_query01_result.png](https://github.com/longnguyen0102/website_analysis-ecommerce-sql/blob/main/eCommerce_project/sql_ecommerce_query01_result.png))
 
 2️⃣ Exploratory Data Analysis (EDA)  
 3️⃣ SQL/ Python Analysis 
