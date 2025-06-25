@@ -49,8 +49,8 @@ Tools Used: SQL
 - Size: The dataset has 338 columns. In this project, using only 17 columns
 
 ### 📊 Data Structure & Relationships  
-|Field Name|Data Type|Description|
-| :—– | :———- | :————– |
+| Field Name  |Data Type|Description|
+| :—––––––––: | :———– | :————– |
 |fullVisitorId|STRING|The unique visitor ID.|
 |date|STRING|The date of the session in YYYYMMDD format.|
 |totals|RECORD|This section contains aggregate values across the session.|
