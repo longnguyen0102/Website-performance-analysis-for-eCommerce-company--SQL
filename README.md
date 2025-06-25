@@ -1,12 +1,6 @@
 # Website analysis - eCommerce - SQL
 
-Please click on the link below to see the code:
-https://console.cloud.google.com/bigquery?sq=690384817981:f2ba7cdb31be4548849a4ad57d91170f
-
 ---
-![KPMG Transaction Analysis](https://github.com/Dorothy-Ho-Vy/Sample_SQL_Python_template/blob/4dee6ff56077b90b1aea82e8517136f7185a77a3/Blue%20White%20Modern%20Payment%20Gateway%20Service%20Twitter%20Post.png.crdownload)
-
-👉🏻Change Icon emoji 🔥🔍📘🚩 to your likings by clicking "Start" + "."
 
 # 📊 Website analysis - eCommerce - SQL
 Author: Nguyễn Hải Long 
@@ -83,11 +77,104 @@ WHERE _table_suffix BETWEEN '0101' AND '0331'
 GROUP BY date
 ;
 ```
-Result  
-![result_query_1](https://github.com/longnguyen0102/photo/blob/main/sql_ecommerce_query01_result.png)
+### Result:  
+![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)
 
-2️⃣ Exploratory Data Analysis (EDA)  
-3️⃣ SQL/ Python Analysis 
+2️⃣ Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
+Bounce session is the session that user does not raise any click after landing on the website
+```
+WITH sum_visits_and_bounces AS(
+  SELECT
+    trafficSource.source
+    ,SUM(totals.visits) total_visits
+    ,SUM(totals.bounces)total_no_of_bounces
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`
+  GROUP BY trafficSource.source
+)
+SELECT
+  *
+  ,ROUND((total_no_of_bounces / total_visits)*100.0, 3) bounce_rate
+FROM sum_visits_and_bounces
+ORDER BY total_visits DESC
+```
+### Result:
+![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)
+
+3️⃣ Revenue by traffic source by week, by month in June 2017
+```
+WITH data_with_date AS(
+  SELECT 
+  PARSE_DATE('%Y%m%d',date) date_format
+  ,trafficSource.source
+  ,productRevenue
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201706*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE productRevenue IS NOT NULL
+),
+revenue_month AS(
+  SELECT
+    'Month' time_type
+    ,FORMAT_DATE('%Y%m',date_format) time
+    ,source
+    ,ROUND((SUM(productRevenue) / 1000000),4) revenue
+  FROM data_with_date
+  GROUP BY time, source
+),
+revenue_week AS(
+  SELECT
+    'Week' time_type
+    ,FORMAT_DATE('%Y%W', date_format) time
+    ,source
+    ,ROUND((SUM(productRevenue) / 1000000),4) revenue
+  FROM data_with_date
+  GROUP BY time, source
+)
+SELECT * FROM revenue_month
+UNION DISTINCT
+SELECT * FROM revenue_week
+ORDER BY source, revenue DESC
+```
+### Result:
+![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
+
+4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017
+```
+WITH get_data AS(
+  SELECT
+    fullVisitorId
+    ,FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
+    ,totals.transactions
+    ,productRevenue
+    ,totals.pageviews
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE _table_suffix BETWEEN '0601' AND '0731'
+)
+,avg_purchasers AS(
+SELECT
+  month
+  ,SUM (pageviews) / COUNT(DISTINCT fullVisitorId) avg_pageviews_purchase
+FROM get_data
+WHERE transactions >= 1 AND productRevenue IS NOT NULL
+GROUP BY month
+)
+,avg_non_purchasers AS(
+SELECT
+  month
+  ,SUM (pageviews) / COUNT(DISTINCT fullVisitorId) avg_pageviews_non_purchase
+FROM get_data
+WHERE transactions IS NULL AND productRevenue IS NULL
+GROUP BY month
+)
+SELECT * FROM avg_purchasers
+LEFT JOIN avg_non_purchasers
+USING(month)
+ORDER BY month
+```
+### Result:
+![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)
 
 - First, explain codes' purpose - what they do
 
