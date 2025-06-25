@@ -34,12 +34,9 @@ Tools Used: SQL
 
 ### 👤 Who is this project for?  
 
-Mention who might benefit from this project 
+- Data analysts & business analysts.
+- Decision-makers.
 
- _Example:_
-
-✔️ Data analysts & business analysts  
-✔️ Decision-makers & stakeholders  
 
 
 
