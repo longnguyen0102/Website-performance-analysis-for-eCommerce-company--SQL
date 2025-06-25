@@ -54,7 +54,7 @@ Tools Used: SQL
 |fullVisitorId|STRING|The unique visitor ID.|
 |date|STRING|The date of the session in YYYYMMDD format.|
 |totals|RECORD|This section contains aggregate values across the session.|
-|totals.bounces	INTEGER	Total bounces (for convenience). For a bounced session, the value is 1, otherwise it is null.|
+|totals.bounces|INTEGER|Total bounces (for convenience). For a bounced session, the value is 1, otherwise it is null.|
 |totals.hits|INTEGER|Total number of hits within the session.|
 |totals.pageviews|INTEGER|Total number of pageviews within the session.|
 |totals.visits|INTEGER|The number of sessions (for convenience). This value is 1 for sessions with interaction events. The value is null if there are no interaction events in the session.|
