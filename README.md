@@ -1,8 +1,4 @@
 # Website analysis - eCommerce - SQL
-
----
-
-# 📊 Website analysis - eCommerce - SQL
 Author: Nguyễn Hải Long 
 Date: 2025-02  
 Tools Used: SQL 
