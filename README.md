@@ -77,15 +77,19 @@ Table using in this project:
 ## ⚒️ Main Process
 
 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)  
- ` SELECT
+ ```
+SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
     ,SUM(totals.visits) visits
     ,SUM(totals.pageviews) pageviews
     ,SUM(totals.transactions) transactions
-  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`
-  WHERE _table_suffix BETWEEN '0101' AND '0331'
-  GROUP BY date
-;`
+FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`
+WHERE _table_suffix BETWEEN '0101' AND '0331'
+GROUP BY date
+;
+```
+Result  
+![] (eCommerce_project/ql_ecommerce_query01_result.png)
 
 2️⃣ Exploratory Data Analysis (EDA)  
 3️⃣ SQL/ Python Analysis 
