@@ -49,6 +49,14 @@ Tools Used: SQL
 - Size: The dataset has 338 columns. In this project, using only 17 columns
 
 ### 📊 Data Structure & Relationships  
+
+| Column Name | Data Type | Description |  
+|-------------|-----------|-------------|  
+| Product_ID  | INT      | Unique identifier for each product |  
+| Name        | TEXT     | Product name |  
+| Category    | TEXT     | Product category |  
+| Price       | FLOAT    | Price per unit |  
+
 | Field Name  |Data Type|Description|
 | :—––––––––: | :———– | :————– |
 |fullVisitorId|STRING|The unique visitor ID.|
