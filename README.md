@@ -70,6 +70,14 @@ Usually this action type applies to all the products in a hit, with the followin
 |hits.product.productSKU|STRING|Product SKU.|
 |hits.product.v2ProductName|STRING|Product Name.|
 
+
+| STT | Cột 1 | Cột 2 |
+| :—– | :———- | :————– |
+| 1 | Dòng 11 | Dòng 21 |
+| 2 | Dòng 12 | Dòng 22 |
+| 3 | Dòng 13 | Dòng 23 |
+| 4 | Dòng 14 | Dòng 24 |
+
 #### 1️⃣ Tables Used:  
 Mention how many tables are in the dataset.  
 
