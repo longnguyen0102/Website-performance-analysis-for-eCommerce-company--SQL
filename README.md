@@ -49,6 +49,7 @@ Tools Used: SQL
 - Size: The dataset has 338 columns. In this project, using only 17 columns
 
 ### 📊 Data Structure & Relationships  
+Table using in this project:  
 
 | Field Name | Data Type | Description |
 |------------|-----------|-------------|
@@ -71,44 +72,21 @@ Tools Used: SQL
 | hits.product.v2ProductName | STRING | Product Name. |
 
 
-| STT | Cột 1 | Cột 2 |
-| :—– | :———- | :————– |
-| 1 | Dòng 11 | Dòng 21 |
-| 2 | Dòng 12 | Dòng 22 |
-| 3 | Dòng 13 | Dòng 23 |
-| 4 | Dòng 14 | Dòng 24 |
-
-#### 1️⃣ Tables Used:  
-Mention how many tables are in the dataset.  
-
-#### 2️⃣ Table Schema & Data Snapshot  
-
-Table 1: Products Table  
-
-👉🏻 Insert a screenshot of table schema 
-
-📌If the table is too big, only capture a part of it that contains key metrics you used in the projects or put the table in toggle
-
- _Example:_
-
-| Column Name | Data Type | Description |  
-|-------------|----------|-------------|  
-| Product_ID  | INT      | Unique identifier for each product |  
-| Name        | TEXT     | Product name |  
-| Category    | TEXT     | Product category |  
-| Price       | FLOAT    | Price per unit |  
-
-
-Table 2: Sales Transactions  
-
-👉🏻 Insert a screenshot of table schema.
-
-
 ---
 
 ## ⚒️ Main Process
 
-1️⃣ Data Cleaning & Preprocessing  
+1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)  
+ ` SELECT
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
+    ,SUM(totals.visits) visits
+    ,SUM(totals.pageviews) pageviews
+    ,SUM(totals.transactions) transactions
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`
+  WHERE _table_suffix BETWEEN '0101' AND '0331'
+  GROUP BY date
+;`
+
 2️⃣ Exploratory Data Analysis (EDA)  
 3️⃣ SQL/ Python Analysis 
 
