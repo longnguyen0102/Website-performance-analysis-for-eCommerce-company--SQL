@@ -77,7 +77,7 @@ WHERE _table_suffix BETWEEN '0101' AND '0331'
 GROUP BY date
 ;
 ```
-</details>
+</details>  
 Result:  
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)  
 
@@ -103,7 +103,7 @@ FROM sum_visits_and_bounces
 ORDER BY total_visits DESC
 ;
 ```
-</details>
+</details>  
 Result:  
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
@@ -147,7 +147,7 @@ SELECT * FROM revenue_week
 ORDER BY source, revenue DESC
 ;
 ```
-</details>
+</details>  
 Result:  
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)  
@@ -192,7 +192,7 @@ USING(month)
 ORDER BY month
 ;
 ```
-</details>
+</details>  
 Result:  
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)  
 
@@ -225,7 +225,7 @@ SELECT
 FROM total_transactions_purchaser
 ;
 ```
-</details>
+</details>  
 Result:  
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)  
 
@@ -260,7 +260,7 @@ SELECT
 FROM sum_revenue_and_visit
 ;
 ```
-</details>
+</details>  
 Result:  
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)  
 
@@ -293,7 +293,7 @@ WITH vintage_purchasers AS(
   ORDER BY sumup DESC
   ;
 ```
-</details>
+</details>  
 Result:  
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)  
@@ -357,7 +357,7 @@ SELECT
 FROM all_data_needed
 ;
 ```
-</details>
+</details>  
 Result:  
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)  
 
