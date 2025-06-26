@@ -30,7 +30,7 @@ Tools Used: SQL
 
 ### 📌 Data Source  
 - Source: Google analytic database.
-- Size: The dataset has 338 columns. In this project, using only 17 columns
+- Size: The dataset has 338 columns. In this project, using only 17 columns.
 
 ### 📊 Data Structure & Relationships  
 Table using in this project:  
@@ -60,7 +60,7 @@ Table using in this project:
 
 ## ⚒️ Main Process
 
-1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month)  
+1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).  
  ```
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
@@ -75,7 +75,8 @@ GROUP BY date
 Result:  
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)
 
-2️⃣ Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
+2️⃣ Bounce rate per traffic source in July 2017.  
+(Bounce_rate = num_bounce/total_visit) (order by total_visit DESC).  
 *Note: Bounce session is the session that user does not raise any click after landing on the website*  
 ```
 WITH sum_visits_and_bounces AS(
@@ -96,7 +97,7 @@ Result:
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)
 
-3️⃣ Revenue by traffic source by week, by month in June 2017
+3️⃣ Revenue by traffic source by week, by month in June 2017.  
 ```
 WITH data_with_date AS(
   SELECT 
@@ -134,7 +135,7 @@ ORDER BY source, revenue DESC
 Result:  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
 
-4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017  
+4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
 *Note: fullVisitorId field is user id.*  
 ```
 WITH get_data AS(
@@ -173,7 +174,7 @@ ORDER BY month
 Result:  
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)
 
-5️⃣ Average number of transactions per user that made a purchase in July 2017
+5️⃣ Average number of transactions per user that made a purchase in July 2017.  
 ```
 WITH get_data AS(
   SELECT
@@ -202,7 +203,7 @@ FROM total_transactions_purchaser
 Result:  
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)
 
-6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017  
+6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017.    
 *Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.*  
 ```
 WITH get_data AS(
@@ -233,7 +234,8 @@ FROM sum_revenue_and_visit
 Result:  
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)
 
-7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
+7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017.  
+*Output should show product name and the quantity was ordered.*  
 ```
 /*filter purchaser*/
 WITH vintage_purchasers AS(
@@ -262,8 +264,11 @@ Result:
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)
 
-8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.  
-*Note: Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.*  
+8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017.  
+For example, 100% product view then 40% add_to_cart and 10% purchase.  
+*Note: Add_to_cart_rate = number product  add to cart/number product view.  
+Purchase_rate = number product purchase/number product view.  
+The output should be calculated in product level.*  
 ```
 WITH filtered_data AS(
   SELECT
