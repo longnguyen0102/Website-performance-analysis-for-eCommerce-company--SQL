@@ -64,7 +64,8 @@ Tools Used: SQL
 
 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).  
 <details>
- <summary>Code:</summary> 
+ <summary>Code:</summary>
+ 
  ```
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
@@ -78,6 +79,7 @@ GROUP BY date
 ```
 </details>  
 Result:  
+
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)  
 
 2️⃣ Bounce rate per traffic source in July 2017.  
