@@ -135,6 +135,7 @@ ORDER BY source, revenue DESC
 ;
 ```
 Result:  
+*Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
 
 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
