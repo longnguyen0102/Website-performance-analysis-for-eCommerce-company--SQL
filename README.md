@@ -106,6 +106,7 @@ ORDER BY total_visits DESC
 ```
 </details>  
 Result:  
+
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
@@ -151,6 +152,7 @@ ORDER BY source, revenue DESC
 ```
 </details>  
 Result:  
+
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)  
@@ -301,6 +303,7 @@ WITH vintage_purchasers AS(
 ```
 </details>  
 Result:  
+
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)  
