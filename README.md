@@ -1,5 +1,5 @@
 # Website analysis - eCommerce - SQL
-Author: Nguyễn Hải Long 
+Author: Nguyễn Hải Long  
 Date: 2025-02  
 Tools Used: SQL 
 
@@ -18,11 +18,10 @@ Tools Used: SQL
 ### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.
 
 - Show up data as demand: number of pageview, visits; calculate the average of money spending by customers in a period of time...
-- 
 
 ### 👤 Who is this project for?  
 
-- Data analysts & business analysts.
+- Data analysts & business analysts.  
 - Decision-makers.
 
 ---
@@ -73,11 +72,11 @@ WHERE _table_suffix BETWEEN '0101' AND '0331'
 GROUP BY date
 ;
 ```
-### Result:  
+Result:  
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)
 
 2️⃣ Bounce rate per traffic source in July 2017 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC)
-Bounce session is the session that user does not raise any click after landing on the website
+*Note: Bounce session is the session that user does not raise any click after landing on the website*  
 ```
 WITH sum_visits_and_bounces AS(
   SELECT
@@ -93,7 +92,8 @@ SELECT
 FROM sum_visits_and_bounces
 ORDER BY total_visits DESC
 ```
-### Result:  
+Result:  
+*Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)
 
 3️⃣ Revenue by traffic source by week, by month in June 2017
@@ -131,11 +131,11 @@ UNION DISTINCT
 SELECT * FROM revenue_week
 ORDER BY source, revenue DESC
 ```
-### Result:  
+Result:  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
 
 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017  
-Note: fullVisitorId field is user id.
+*Note: fullVisitorId field is user id.*  
 ```
 WITH get_data AS(
   SELECT
@@ -170,7 +170,7 @@ LEFT JOIN avg_non_purchasers
 USING(month)
 ORDER BY month
 ```
-### Result:  
+Result:  
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)
 
 5️⃣ Average number of transactions per user that made a purchase in July 2017
@@ -199,11 +199,11 @@ SELECT
 FROM total_transactions_purchaser
 ;
 ```
-### Result:  
+Result:  
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)
 
 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017  
-Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.
+*Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.*  
 ```
 WITH get_data AS(
     SELECT
@@ -230,7 +230,7 @@ SELECT
 FROM sum_revenue_and_visit
 ;
 ```
-### Result:  
+Result:  
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)
 
 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
@@ -258,12 +258,12 @@ WITH vintage_purchasers AS(
   ORDER BY sumup DESC
   ;
 ```
-### Result:  
-Note: Because the result has many column, so the image shows about first 20 columns.
+Result:  
+*Note: Because the result has many column, so the image shows about first 20 columns.*  
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)
 
 8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.  
-Note: Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.  
+*Note: Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.*  
 ```
 WITH filtered_data AS(
   SELECT
