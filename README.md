@@ -93,7 +93,7 @@ SELECT
 FROM sum_visits_and_bounces
 ORDER BY total_visits DESC
 ```
-### Result:
+### Result:  
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)
 
 3️⃣ Revenue by traffic source by week, by month in June 2017
@@ -131,10 +131,11 @@ UNION DISTINCT
 SELECT * FROM revenue_week
 ORDER BY source, revenue DESC
 ```
-### Result:
+### Result:  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
 
-4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017
+4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017  
+Note: fullVisitorId field is user id.
 ```
 WITH get_data AS(
   SELECT
@@ -169,24 +170,154 @@ LEFT JOIN avg_non_purchasers
 USING(month)
 ORDER BY month
 ```
-### Result:
+### Result:  
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)
 
-- First, explain codes' purpose - what they do
+5️⃣ Average number of transactions per user that made a purchase in July 2017
+```
+WITH get_data AS(
+  SELECT
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
+    ,fullVisitorId
+    ,totals.transactions
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE totals.transactions >= 1 AND productRevenue IS NOT NULL
+)
+,total_transactions_purchaser AS(
+  SELECT
+    month
+    ,COUNT(DISTINCT fullVisitorId) count_visitor
+    ,SUM(transactions) sum_transactions
+  FROM get_data
+  GROUP BY month
+)
+SELECT
+  month
+  ,(sum_transactions / count_visitor) avg_total_transactions_per_user
+FROM total_transactions_purchaser
+;
+```
+### Result:  
+![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)
 
-- Then how your query/ code & Insert screenshots of your result
+6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017  
+Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.
+```
+WITH get_data AS(
+    SELECT
+        FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
+        ,totals.transactions
+        ,totals.visits
+        ,productRevenue
+    FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
+    UNNEST (hits) hits,
+    UNNEST (hits.product) product
+    WHERE totals.transactions IS NOT NULL AND productRevenue IS NOT NULL
+)
+,sum_revenue_and_visit AS(
+    SELECT
+        month
+        ,SUM(productRevenue) / 1000000 sum_revenue
+        ,SUM(visits) sum_visit
+    FROM get_data
+    GROUP BY month
+)
+SELECT
+    month
+    ,ROUND((sum_revenue / sum_visit),2) avg_revenue_by_user_per_visit
+FROM sum_revenue_and_visit
+;
+```
+### Result:  
+![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)
 
-- Finally, explain your observations/ findings from the results  ts findings
-  
- _Describe trends, key metrics, and patterns._  
+7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017. Output should show product name and the quantity was ordered.
+```
+/*filter purchaser*/
+WITH vintage_purchasers AS(
+  SELECT
+    fullVisitorId
+    ,product.v2ProductName
+    ,product.productQuantity
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE productRevenue IS NOT NULL AND productQuantity IS NOT NULL AND product.v2ProductName = "YouTube Men's Vintage Henley"
+)
+  SELECT
+    product.v2ProductName other_purchased_products
+    ,SUM(product.productQuantity) sumup
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_201707*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE productRevenue IS NOT NULL AND productQuantity IS NOT NULL AND fullVisitorId IN (SELECT fullVisitorId FROM vintage_purchasers)
+    AND product.v2ProductName <> "YouTube Men's Vintage Henley"
+  GROUP BY other_purchased_products
+  ORDER BY sumup DESC
+  ;
+```
+### Result:  
+Note: Because the result has many column, so the image shows about first 20 columns.
+![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)
 
----
+8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017. For example, 100% product view then 40% add_to_cart and 10% purchase.  
+Note: Add_to_cart_rate = number product  add to cart/number product view. Purchase_rate = number product purchase/number product view. The output should be calculated in product level.  
+```
+WITH filtered_data AS(
+  SELECT
+    FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
+    ,CAST(hits.eCommerceAction.action_type AS INT64) AS action_type
+    ,product.productRevenue
+  FROM `bigquery-public-data.google_analytics_sample.ga_sessions_2017*`,
+  UNNEST (hits) hits,
+  UNNEST (hits.product) product
+  WHERE _table_suffix BETWEEN '0101' AND '0331'
+  ORDER BY action_type
+)
+,product_view AS(
+  SELECT
+    month
+    ,COUNT(action_type) num_product_view
+  FROM filtered_data
+  WHERE action_type = 2
+  GROUP BY month
+)
+,add_to_cart AS(
+  SELECT
+    month
+    ,COUNT(action_type) num_addtocart
+  FROM filtered_data
+  WHERE action_type = 3
+  GROUP BY month
+)
+,purchase AS(
+  SELECT
+    month
+    ,COUNT(action_type) num_purchase
+  FROM filtered_data
+  WHERE action_type = 6 AND productRevenue IS NOT NULL
+  GROUP BY month
+)
+,all_data_needed AS(
+  SELECT * FROM product_view
+  JOIN add_to_cart
+  USING(month)
+  JOIN purchase
+  USING(month)
+  ORDER BY month
+)
+SELECT 
+  *
+  ,ROUND((num_addtocart / num_product_view)*100,2) add_to_cart_rate
+  ,ROUND((num_purchase / num_product_view)*100,2) purchase_rate
+FROM all_data_needed
+```
+Result:  
+![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)
 
-## 🔎 Final Conclusion & Recommendations  
-
-👉🏻 Based on the insights and findings above, we would recommend the [stakeholder team] to consider the following:  
-
-📌 Key Takeaways:  
-✔️ Recommendation 1  
-✔️ Recommendation 2  
-✔️ Recommendation 3
+## 📌 Key Takeaways:  
+✔️ Understanding the basics of SQL query.
+✔️ Know how to apply Window Functions when writing queries.
+✔️ Understanding real-world requirements when using SQl to retrieve neceesary data.
