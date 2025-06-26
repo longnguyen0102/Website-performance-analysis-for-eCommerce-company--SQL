@@ -64,8 +64,7 @@ Tools Used: SQL
 
 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).  
 <details>
- <summary>Code:</summary>
- 
+ <summary>Code:</summary> 
  ```
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
