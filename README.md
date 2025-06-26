@@ -318,6 +318,6 @@ Result:
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)
 
 ## 📌 Key Takeaways:  
-✔️ Understanding the basics of SQL query.
-✔️ Know how to apply Window Functions when writing queries.
-✔️ Understanding real-world requirements when using SQl to retrieve neceesary data.
+✔️ Understanding the basics of SQL query.  
+✔️ Know how to apply Window Functions when writing queries.  
+✔️ Understanding real-world requirements when using SQl to retrieve neceesary data
