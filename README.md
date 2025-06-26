@@ -92,6 +92,7 @@ SELECT
   ,ROUND((total_no_of_bounces / total_visits)*100.0, 3) bounce_rate
 FROM sum_visits_and_bounces
 ORDER BY total_visits DESC
+;
 ```
 Result:  
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
@@ -131,6 +132,7 @@ SELECT * FROM revenue_month
 UNION DISTINCT
 SELECT * FROM revenue_week
 ORDER BY source, revenue DESC
+;
 ```
 Result:  
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)
@@ -170,6 +172,7 @@ SELECT * FROM avg_purchasers
 LEFT JOIN avg_non_purchasers
 USING(month)
 ORDER BY month
+;
 ```
 Result:  
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)
@@ -318,6 +321,7 @@ SELECT
   ,ROUND((num_addtocart / num_product_view)*100,2) add_to_cart_rate
   ,ROUND((num_purchase / num_product_view)*100,2) purchase_rate
 FROM all_data_needed
+;
 ```
 Result:  
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)
