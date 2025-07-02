@@ -1,4 +1,4 @@
-# Website analysis - eCommerce - SQL
+# eCommerce Website performance analysis using SQL
 Author: Nguyễn Hải Long  
 Date: 2025-02  
 Tools Used: SQL 
