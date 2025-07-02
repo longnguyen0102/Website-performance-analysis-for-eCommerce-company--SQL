@@ -78,7 +78,6 @@ GROUP BY date
 ;
 ```
 </details>  
-Result:  
 
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)  
 
@@ -105,7 +104,6 @@ ORDER BY total_visits DESC
 ;
 ```
 </details>  
-Result:  
 
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
@@ -151,7 +149,6 @@ ORDER BY source, revenue DESC
 ;
 ```
 </details>  
-Result:  
 
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
@@ -198,7 +195,6 @@ ORDER BY month
 ;
 ```
 </details>  
-Result:  
 
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)  
 
@@ -232,7 +228,6 @@ FROM total_transactions_purchaser
 ;
 ```
 </details>  
-Result:  
 
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)  
 
@@ -268,7 +263,6 @@ FROM sum_revenue_and_visit
 ;
 ```
 </details>  
-Result:  
 
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)  
 
@@ -302,7 +296,6 @@ WITH vintage_purchasers AS(
   ;
 ```
 </details>  
-Result:  
 
 *Note: Because the result has many column, so the image shows about first 20 columns.*  
 
@@ -368,7 +361,6 @@ FROM all_data_needed
 ;
 ```
 </details>  
-Result:  
 
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)  
 
