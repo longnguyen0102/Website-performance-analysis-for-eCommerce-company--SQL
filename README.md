@@ -60,7 +60,9 @@ Tools Used: SQL
 
 ---
 
-## ⚒️ Main Process
+## ⚒️ Main Process  
+
+*Note: Click the white triangle to see codes*  
 
 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).  
 <details>
