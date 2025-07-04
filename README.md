@@ -68,7 +68,7 @@ Tools Used: SQL
 <details>
  <summary>Code:</summary>
  
- ```
+ ```python
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
     ,SUM(totals.visits) visits
