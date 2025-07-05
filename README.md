@@ -17,7 +17,7 @@ Tools Used: SQL
 ### Objective:
 ### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.  
 
-- 
+- Extracting data to understand consumer behavior through metrics such as purchase rate, add-to-cart rate, frequently co-purchased items, and pageviews across platforms.  
 - Show up data as demand: number of pageview, visits; calculate the average of money spending by customers in a period of time...
 
 ### 👤 Who is this project for?  
@@ -114,7 +114,7 @@ ORDER BY total_visits DESC
 
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
 
-➡️ The order of result is decending according to the total_visits. Google has the most visits and the bounce rate is about 51.5%. l.facebook.com has the most bounce_rate (88.235&) in the first 20 results, this number indicates that users tends to scroll for news feed rather that interact with the website.
+➡️ The order of result is decending according to the total_visits. Google has the most visits and the bounce rate is about 51.5%. l.facebook.com has the most bounce_rate (88.235&) in the first 20 results, this number indicates that users tends to scroll for news feed rather that interact with the website.  
 
 ### 3️⃣ Revenue by traffic source by week, by month in June 2017.  
 <details>
@@ -161,7 +161,7 @@ ORDER BY source, revenue DESC
 
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)  
 
-➡️ 
+➡️ In June 2017, most revenue is from unknown source (these are from users' action or Google Analytics cannot track the origin of the visit).  
 
 ### 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
 *Note: fullVisitorId field is user id.*  
@@ -207,6 +207,8 @@ ORDER BY month
 
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)  
 
+➡️ Average number pageviews of non-purchasers in June and July is about three times bigger than purchasers. However, in each month, the number pageviews of purchasers increases (~32%) and in non-purchasers is (~5.4%). These numbers indicate that the UI/UX of website or any marketing campaign worked during June and July of 2017.
+
 ### 5️⃣ Average number of transactions per user that made a purchase in July 2017.  
 <details>
  <summary>Code:</summary>
@@ -239,6 +241,8 @@ FROM total_transactions_purchaser
 </details>  
 
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)  
+
+➡️ As can see from the result, this number in July 2017 is high. Each customers will make 4 transactions; they did not buy one time then leave, they came back to make more transactions in a month.  
 
 ### 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017.    
 *Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.*  
@@ -275,6 +279,8 @@ FROM sum_revenue_and_visit
 
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)  
 
+➡️ Revenue made from an user is 43.86 in July. If the cost to bring a new user to the platform is lower than 43.86, the company is making profit.  
+
 ### 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017.  
 *Output should show product name and the quantity was ordered.*  
 <details>
@@ -306,9 +312,11 @@ WITH vintage_purchasers AS(
 ```
 </details>  
 
-*Note: Because the result has many column, so the image shows about first 20 columns.*  
+*Note: Because the result has many column, so the image shows about first 20 columns. 'sumup' is the total number of purchased product.*  
 
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)  
+
+➡️ Google Sunglasses is the most selling item to people who purchased "Youtube Men's Vintage Henley". When looking at the following items, we can see users tend to buy fashion products or accessories.
 
 ### 8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017.  
 For example, 100% product view then 40% add_to_cart and 10% purchase.  
@@ -373,7 +381,13 @@ FROM all_data_needed
 
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)  
 
+➡️ The numbers of 'Add to cart', 'Purchases' increase from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.
+➡️ The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
+
 ## 📌 Key Takeaways:  
-✔️ Understanding the basics of SQL query.  
-✔️ Know how to apply Window Functions when writing queries.  
-✔️ Understanding real-world requirements when using SQl to retrieve neceesary data
+✔️ Understanding the basics of SQL query: ```SUM```, ```GROUP BY```, ```ORDER BY```, ```COUNT``` syntax.  
+✔️ Applying Window Functions in query writing helps make the code more concise and readable.   
+✔️ Understanding how to use ```JOIN``` syntax correctly is essential to ensure accurate results and achieve the most effective data combinations.  
+✔️ The importance of date transformation in data extraction lies in enabling accurate filtering, aggregation, and trend analysis over time. Proper date handling ensures that time-based insights are reliable and actionable.  
+✔️ By using BigQuery, Understanding of ```UNNEST``` syntax in extracting the right amount of data.  
+✔️ Understanding practical data requirements enables you to extract the right data, leading to focused and actionable insights.
