@@ -69,7 +69,7 @@ Tools Used: SQL
 <details>
  <summary>Code:</summary>
  
- ```python
+ ```sql
 SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
     ,SUM(totals.visits) visits
@@ -92,7 +92,7 @@ GROUP BY date
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH sum_visits_and_bounces AS(
   SELECT
     trafficSource.source
@@ -114,11 +114,13 @@ ORDER BY total_visits DESC
 
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
 
+➡️ The order of result is decending according to the total_visits. Google has the most visits and the bounce rate is about 51.5%. l.facebook.com has the most bounce_rate (88.235&) in the first 20 results, this number indicates that users tends to scroll for news feed rather that interact with the website.
+
 ### 3️⃣ Revenue by traffic source by week, by month in June 2017.  
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH data_with_date AS(
   SELECT 
   PARSE_DATE('%Y%m%d',date) date_format
@@ -159,12 +161,14 @@ ORDER BY source, revenue DESC
 
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)  
 
+➡️ 
+
 ### 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
 *Note: fullVisitorId field is user id.*  
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH get_data AS(
   SELECT
     fullVisitorId
@@ -207,7 +211,7 @@ ORDER BY month
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH get_data AS(
   SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
@@ -241,7 +245,7 @@ FROM total_transactions_purchaser
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH get_data AS(
     SELECT
         FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
@@ -276,7 +280,7 @@ FROM sum_revenue_and_visit
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 /*filter purchaser*/
 WITH vintage_purchasers AS(
   SELECT
@@ -314,7 +318,7 @@ The output should be calculated in product level.*
 <details>
  <summary>Code:</summary>
  
-```python
+```sql
 WITH filtered_data AS(
   SELECT
     FORMAT_DATE('%Y%m', PARSE_DATE('%Y%m%d',date)) month
