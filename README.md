@@ -114,7 +114,7 @@ ORDER BY total_visits DESC
 
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
 
-➡️ The order of result is decending according to the total_visits. Google had the most visits and the bounce rate was about 51.5%. l.facebook.com had the most bounce_rate (88.235&) in the first 20 results, this number indicated that users tended to scroll for news feed rather that interact with the website.  
+➡️ The order of result is decending according to the total_visits. Google had the most visits and the bounce rate was about 51.5%. l.facebook.com had the most bounce_rate (88.235%) in the first 20 results, this number indicated that users tended to scroll for news feed rather that interact with the website.  
 
 ### 3️⃣ Revenue by traffic source by week, by month in June 2017.  
 <details>
