@@ -17,8 +17,7 @@ Tools Used: SQL
 ### Objective:
 ### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.  
 
-- Extracting data to understand consumer behavior through metrics such as purchase rate, add-to-cart rate, frequently co-purchased items, and pageviews across platforms.  
-- Show up data as demand: number of pageview, visits; calculate the average of money spending by customers in a period of time...
+(sửa lại phần này)  
 
 ### 👤 Who is this project for?  
 
