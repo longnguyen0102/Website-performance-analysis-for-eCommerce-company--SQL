@@ -17,7 +17,7 @@ Tools Used: SQL
 ### Objective:
 ### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.  
 
-(sửa lại phần này)  
+- Extracting data to understand consumers' behavior through number of visits, pageviews, transactions; bounce rate 
 
 ### 👤 Who is this project for?  
 
@@ -317,7 +317,7 @@ WITH vintage_purchasers AS(
 
 ➡️ Google Sunglasses was the most selling item to people who purchased "Youtube Men's Vintage Henley". When looking at the following items, we can see users tended to buy fashion products or accessories.
 
-### 8️⃣ Calculate cohort map from product view to addtocart to purchase in Jan, Feb and March 2017.  
+### 8️⃣ Calculate cohort map from product view to add to cart to purchase in Jan, Feb and March 2017.  
 For example, 100% product view then 40% add_to_cart and 10% purchase.  
 *Note: Add_to_cart_rate = number product  add to cart/number product view.  
 Purchase_rate = number product purchase/number product view.  
