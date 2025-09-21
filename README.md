@@ -381,7 +381,7 @@ FROM all_data_needed
 
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)  
 
-➡️ The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.
+➡️ The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.  
 ➡️ The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
 
 ## 📌 Key Takeaways:  
@@ -389,5 +389,5 @@ FROM all_data_needed
 ✔️ Applying Window Functions in query writing helps make the code more concise and readable.   
 ✔️ Understanding how to use ```JOIN``` syntax correctly is essential to ensure accurate results and achieve the most effective data combinations.  
 ✔️ The importance of date transformation in data extraction lies in enabling accurate filtering, aggregation, and trend analysis over time. Proper date handling ensures that time-based insights are reliable and actionable.  
-✔️ By using BigQuery, Understanding of ```UNNEST``` syntax in extracting the right amount of data.  
+✔️ By using BigQuery, understanding of ```UNNEST``` syntax in extracting the right amount of data.  
 ✔️ Understanding practical data requirements enables you to extract the right data, leading to focused and actionable insights.
