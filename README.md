@@ -65,7 +65,7 @@ Tools Used: SQL
 
 *Note: Click the white triangle to see codes*  
 
-### 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).  
+<font size="5">1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).</font>  
 <details>
  <summary>Code:</summary>
  
@@ -84,7 +84,7 @@ GROUP BY date
 
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)  
 
-➡️ February 2017 had the least number of visits and pageviews; however transactions number was higher than January 2017. March 2017 had the highest number of the first quarter of 2017. Maybe the reason behind was January and February are after Holiday season so custoners did not want to spend more money in purchasing.  
+➡️  February 2017 had the least number of visits and pageviews; however transactions number was higher than January 2017. March 2017 had the highest number of the first quarter of 2017. Maybe the reason behind was January and February are after Holiday season so custoners did not want to spend more money in purchasing.  
 
 ### 2️⃣ Bounce rate per traffic source in July 2017.  
 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC).  
