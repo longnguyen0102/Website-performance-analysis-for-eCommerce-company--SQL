@@ -90,7 +90,7 @@ GROUP BY date
 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC).  
 *Note: Bounce session is the session that user does not raise any click after landing on the website*  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH sum_visits_and_bounces AS(
@@ -118,7 +118,7 @@ ORDER BY total_visits DESC
 
 ## 3️⃣ Revenue by traffic source by week, by month in June 2017.  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH data_with_date AS(
@@ -166,7 +166,7 @@ ORDER BY source, revenue DESC
 ## 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
 *Note: fullVisitorId field is user id.*  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH get_data AS(
@@ -211,7 +211,7 @@ ORDER BY month
 
 ## 5️⃣ Average number of transactions per user that made a purchase in July 2017.  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH get_data AS(
@@ -247,7 +247,7 @@ FROM total_transactions_purchaser
 ## 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017.    
 *Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.*  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH get_data AS(
@@ -284,7 +284,7 @@ FROM sum_revenue_and_visit
 ## 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017.  
 *Output should show product name and the quantity was ordered.*  
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 /*filter purchaser*/
@@ -324,7 +324,7 @@ For example, 100% product view then 40% add_to_cart and 10% purchase.
 Purchase_rate = number product purchase/number product view.  
 The output should be calculated in product level.* 
 <details>
- <summary>Code:</summary>
+ <summary><em>Code:</em></summary>
  
 ```sql
 WITH filtered_data AS(
