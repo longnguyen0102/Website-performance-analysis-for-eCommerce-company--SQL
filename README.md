@@ -65,7 +65,7 @@ Tools Used: SQL
 
 *Note: Click the white triangle to see codes*  
 
-<font size="5">1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).</font>  
+<font size="7">1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month).</font>  
 <details>
  <summary>Code:</summary>
  
