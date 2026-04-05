@@ -60,7 +60,7 @@ Tools Used: SQL
 
 ---
 
-## ⚒️ Main Process  
+## Main Process  
 
  *Note: Click the white triangle to see codes*  
 
