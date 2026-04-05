@@ -15,9 +15,7 @@ Tools Used: SQL
 
 ## 📌 Background & Overview  
 
-### Objective:
-### 📖 This project is about using SQL to analyze transaction data from Google analytic dataset.  
-
+### 📖 Objective: This project is about using SQL to analyze transaction data from Google analytic dataset.    
 - The dataset captures user behavior and business performance metrics of an e-commerce website in 2017, including traffic volume, conversion rates, traffic sources, revenue, and cross-sell products.  
 - The main objective is to analyze the customer journey and evaluate the effectiveness of marketing channels to optimize user experience and drive revenue growth.  
 
