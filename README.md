@@ -385,7 +385,7 @@ The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.
 
 ---
 
-## 🗝️ Key Takeaways:  
+## 🗝️ Key Takeaways  
 ✔️ Understanding the basics of SQL query: ```SUM```, ```GROUP BY```, ```ORDER BY```, ```COUNT``` syntax.  
 ✔️ Applying Window Functions in query writing helps make the code more concise and readable.   
 ✔️ Understanding how to use ```JOIN``` syntax correctly is essential to ensure accurate results and achieve the most effective data combinations.  
