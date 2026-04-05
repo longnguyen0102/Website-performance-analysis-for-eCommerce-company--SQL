@@ -5,7 +5,7 @@ Tools Used: SQL
 
 ---
 
-## 📑 Table of Contents  
+# 📑 Table of Contents  
 1. [📌 Background & Overview](#-background--overview)  
 2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
 3. [⚒️ Main Process](#-main-process)  
@@ -60,7 +60,7 @@ Tools Used: SQL
 
 ---
 
-## Main Process  
+## ⚒️ Main Process  
 
  *Note: Click the white triangle to see codes*  
 
