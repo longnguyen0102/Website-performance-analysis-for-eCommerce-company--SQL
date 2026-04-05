@@ -84,7 +84,7 @@ GROUP BY date
 
 ![result_query_1](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query01_result.png)  
 
-> February 2017 had the least number of visits and pageviews; however transactions number was higher than January 2017. March 2017 had the highest number of the first quarter of 2017. Maybe the reason behind was January and February are after Holiday season so custoners did not want to spend more money in purchasing.  
+February 2017 had the least number of visits and pageviews; however transactions number was higher than January 2017. March 2017 had the highest number of the first quarter of 2017. Maybe the reason behind was January and February are after Holiday season so custoners did not want to spend more money in purchasing.  
 
 ## 2️⃣ Bounce rate per traffic source in July 2017.  
 (Bounce_rate = num_bounce/total_visit) (order by total_visit DESC).  
@@ -114,7 +114,7 @@ ORDER BY total_visits DESC
 
 ![result_query_2](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query02_result.png)  
 
-> The order of result is decending according to the total_visits. Google had the most visits and the bounce rate was about 51.5%. l.facebook.com had the most bounce_rate (88.235%) in the first 20 results, this number indicated that users tended to scroll for news feed rather that interact with the website.  
+The order of result is decending according to the total_visits. Google had the most visits and the bounce rate was about 51.5%. l.facebook.com had the most bounce_rate (88.235%) in the first 20 results, this number indicated that users tended to scroll for news feed rather that interact with the website.  
 
 ## 3️⃣ Revenue by traffic source by week, by month in June 2017.  
 <details>
@@ -161,7 +161,7 @@ ORDER BY source, revenue DESC
 
 ![result_query_3](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query03_result.png)  
 
-> In June 2017, most revenue was from unknown source (these are from users' action or Google Analytics cannot track the origin of the visit).  
+In June 2017, most revenue was from unknown source (these are from users' action or Google Analytics cannot track the origin of the visit).  
 
 ## 4️⃣ Average number of pageviews by purchaser type (purchasers vs non-purchasers) in June, July 2017.  
 *Note: fullVisitorId field is user id.*  
@@ -207,7 +207,7 @@ ORDER BY month
 
 ![result_query_4](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query04_result.png)  
 
-> Average number pageviews of non-purchasers in June and July was about three times bigger than purchasers. However, in each month, the number pageviews of purchasers increased (~32%) and in non-purchasers was ~5.4%. These numbers indicated that the UI/UX of website or any marketing campaign worked during June and July of 2017.
+Average number pageviews of non-purchasers in June and July was about three times bigger than purchasers. However, in each month, the number pageviews of purchasers increased (~32%) and in non-purchasers was ~5.4%. These numbers indicated that the UI/UX of website or any marketing campaign worked during June and July of 2017.
 
 ## 5️⃣ Average number of transactions per user that made a purchase in July 2017.  
 <details>
@@ -242,7 +242,7 @@ FROM total_transactions_purchaser
 
 ![result_query_5](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query05_result.png)  
 
-> As can see from the result, this number in July 2017 was high. Each customers made 4 transactions; they did not buy one time then leave, they came back to make more transactions in a month.  
+As can see from the result, this number in July 2017 was high. Each customers made 4 transactions; they did not buy one time then leave, they came back to make more transactions in a month.  
 
 ## 6️⃣ Average amount of money spent per session. Only include purchaser data in July 2017.    
 *Note: Condition of purchaser: transactions >=1 and productRevenue IS NOT NULL.*  
@@ -279,7 +279,7 @@ FROM sum_revenue_and_visit
 
 ![result_query_6](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query06_result.png)  
 
-> Revenue made from an user is 43.86 in July. If the cost to bring a new user to the platform is lower than 43.86, the company is making profit.  
+Revenue made from an user is 43.86 in July. If the cost to bring a new user to the platform is lower than 43.86, the company is making profit.  
 
 ## 7️⃣ Other products purchased by customers who purchased product "YouTube Men's Vintage Henley" in July 2017.  
 *Output should show product name and the quantity was ordered.*  
@@ -316,7 +316,7 @@ WITH vintage_purchasers AS(
 
 ![result_query_7](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query07_result.png)  
 
-> Google Sunglasses was the most selling item to people who purchased "Youtube Men's Vintage Henley". When looking at the following items, we can see users tended to buy fashion products or accessories.
+Google Sunglasses was the most selling item to people who purchased "Youtube Men's Vintage Henley". When looking at the following items, we can see users tended to buy fashion products or accessories.
 
 ## 8️⃣ Calculate cohort map from product view to add to cart to purchase in Jan, Feb and March 2017.  
 For example, 100% product view then 40% add_to_cart and 10% purchase.  
@@ -381,8 +381,8 @@ FROM all_data_needed
 
 ![result_query_8](https://github.com/longnguyen0102/photo/blob/main/eCommerce_project/sql_ecommerce_query08_result.png)  
 
-> The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.  
-> The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
+The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.  
+The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
 
 ## 📌 Key Takeaways:  
 ✔️ Understanding the basics of SQL query: ```SUM```, ```GROUP BY```, ```ORDER BY```, ```COUNT``` syntax.  
