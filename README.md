@@ -8,7 +8,7 @@ Tools Used: SQL
 ## 📑 Table of Contents  
 1. [📌 Background & Overview](#-background--overview)  
 2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
-3. [📌 Key Takeawys](#-key-takeaways)
+3. [🗝️ Key Takeawys](#-key-takeaways)
 
 ---
 
@@ -384,7 +384,7 @@ FROM all_data_needed
 The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.  
 The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
 
-## 📌 Key Takeaways:  
+## 🗝️ Key Takeaways:  
 ✔️ Understanding the basics of SQL query: ```SUM```, ```GROUP BY```, ```ORDER BY```, ```COUNT``` syntax.  
 ✔️ Applying Window Functions in query writing helps make the code more concise and readable.   
 ✔️ Understanding how to use ```JOIN``` syntax correctly is essential to ensure accurate results and achieve the most effective data combinations.  
