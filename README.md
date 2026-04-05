@@ -8,7 +8,7 @@ Tools Used: SQL
 # 📑 Table of Contents  
  1. [📌 Background & Overview](#-background--overview)  
  2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
- 3. [⚒️ Main Process](#mainProcess)  
+ 3. [⚒️ Main Process](#-%EF%B8%8F-main-process)  
  4. [🗝️ Key Takeaways](#-key-takeaways)  
 
 ---
@@ -60,7 +60,7 @@ Tools Used: SQL
 
 ---
 
-## <a name="mainProcess"></a> ⚒️ Main Process  
+## ⚒️ Main Process  
 
  *Note: Click the white triangle to see codes*  
 
