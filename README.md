@@ -62,7 +62,7 @@ Tools Used: SQL
 
 ## ⚒️ Main Process  
 
-*Note: Click the white triangle to see codes*  
+ *Note: Click the white triangle to see codes*  
 
 ### 1️⃣ Calculate total visit, pageview, transaction for Jan, Feb and March 2017 (order by month). ###  
 <details>
@@ -383,7 +383,7 @@ FROM all_data_needed
 The numbers of 'Add to cart', 'Purchases' increased from January to March. The reason behind maybe the improvement of website UI/UX, or marketing campaigns hit the "right spot" of users.  
 The add-to-cart rate of the first 3 months of 2017 increased (from 28.47% to 37.29%). From February to March, we can see the purchase rate increased dramatically from 9.59% to 12.64%.  
 
---
+---
 
 ## 🗝️ Key Takeaways:  
 ✔️ Understanding the basics of SQL query: ```SUM```, ```GROUP BY```, ```ORDER BY```, ```COUNT``` syntax.  
