@@ -9,7 +9,7 @@ Tools Used: SQL
  1. [📌 Background & Overview](#-background--overview)  
  2. [📂 Dataset Description & Data Structure](#-dataset-description--data-structure)  
  3. [⚒️ Main Process](#%EF%B8%8F-main-process)  
- 4. [🗝️ Key Takeaways](#%EF%B8%8Fkey-takeaways)  
+ 4. [🗝️ Key Takeaways](#%EF%B8%8F-key-takeaways)  
 
 ---
 
